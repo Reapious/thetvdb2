@@ -55,10 +55,6 @@ class Client implements ClientInterface
         $this->init();
     }
 
-    private function getApiBaseUri() {
-      return self::API_BASE_URI;
-    }
-
     /**
      * Initialize Client
      *
@@ -68,7 +64,7 @@ class Client implements ClientInterface
     {
         $this->httpClient = new HttpClient(
             [
-                'base_uri' => $this->getApiBaseUri(),
+                'base_uri' => static::API_BASE_URI,
                 'verify' => false,
                 'http_errors' => false,
                 //'proxy' => 'tcp://localhost:8080',
