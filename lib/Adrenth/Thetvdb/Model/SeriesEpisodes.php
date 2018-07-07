@@ -37,7 +37,7 @@ class SeriesEpisodes extends ValueObject
         $items = [];
 
         foreach ((array) $values['data'] as $basicEpisode) {
-            $items[] = new BasicEpisode($basicEpisode);
+            $items[] = new Episode(['data' => $basicEpisode]);
         }
 
         parent::__construct([
